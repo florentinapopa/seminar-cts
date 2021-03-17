@@ -3,18 +3,22 @@ package ro.ase.cts.clase;
 import java.util.Arrays;
 
 public class Elev extends Aplicant{
+	
 	private int clasa;
 	private String tutore;
 	
 	public int getClasa() {
 		return clasa;
 	}
-	public void setClasa(int i) {
-		this.clasa = i;
+	
+	public void setClasa(int clasa) {
+		this.clasa = clasa;
 	}
+	
 	public String getTutore() {
 		return tutore;
 	}
+	
 	public void setTutore(String tutore) {
 		this.tutore = tutore;
 	}
@@ -22,13 +26,13 @@ public class Elev extends Aplicant{
 	
 	@Override
 	public String toString() {
-		final StringBuilder stringb=new StringBuilder("Elev:");
-		stringb.append(super.toString());
-		stringb.append(", clasa=");
-		stringb.append(clasa);
-		stringb.append(", tutore=");
-		stringb.append(tutore);
-		return stringb.toString();
+		final StringBuilder builder=new StringBuilder("Elev:");
+		builder.append(super.toString());
+		builder.append(", clasa=");
+		builder.append(clasa);
+		builder.append(", tutore=");
+		builder.append(tutore);
+		return builder.toString();
 	}
 	
 	public Elev() {
@@ -42,10 +46,13 @@ public class Elev extends Aplicant{
 		this.tutore = tutore;
 	}
 	
-	public int finantare() {
-		int s=30;
-		System.out.println("Angajatul "+getNume()+" "+getPrenume()+" primeste"+s+" Euro/zi in proiect.");
-		return s;
+	public String finantare() {
+		final StringBuilder builder=new StringBuilder("Student:");
+		builder.append(super.finantare());
+		builder.append("primeste suma de ");
+		builder.append(Constanta.FINANTARE_ELEV);
+		builder.append("Euro/zi pe proiect");
+		return builder.toString();
 	}
 	
 }

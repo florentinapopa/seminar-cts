@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public abstract class Aplicant{
 	
-	
 	protected String nume;
 	protected String prenume;
 	protected int varsta;
@@ -12,10 +11,10 @@ public abstract class Aplicant{
 	protected int nr_proiecte;
 	protected String[] denumireProiect;
 	
-	
 	public String getNume() {
 		return nume;
 	}
+	
 	public void setNume(String nume) {
 		this.nume = nume;
 	}
@@ -23,35 +22,43 @@ public abstract class Aplicant{
 	public String getPrenume() {
 		return prenume;
 	}
+	
 	public void setPrenume(String prenume) {
 		this.prenume = prenume;
 	}
+	
 	public int getVarsta() {
 		return varsta;
 	}
+	
 	public void setVarsta(int varsta) {
 		this.varsta = varsta;
 	}
-	public void statut(){
-		if(punctaj>80)
-			System.out.println("Aplicantul "+nume+" "+prenume+" a fost acceptat.");
-		else
-			System.out.println("Aplicantul "+nume+" "+prenume+" nu a fost acceptat.");
-		}
+	
+	public void statut(){	
+		StringBuilder builder = new StringBuilder();
+		builder.append("Aplicantul nume ");
+		builder.append(nume);
+		builder.append(" prenume ");
+		builder.append(prenume);
+		String statut= punctaj > Constanta.STATUT ? "a fost acceptat" : "nu a fost acceptat";
+		builder.append(statut);
+		System.out.println(builder.toString());
+	}
+	
 	public int getPunctaj() {
 		return punctaj;
 	}
+	
 	public void setPunctaj(int punctaj) {
 		this.punctaj = punctaj;
 	}
-	
-	
-
 	
 	public Aplicant() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	public Aplicant(String nume, String prenume, int varsta, int punctaj, int nr_proiecte, String[] denumireProiect) {
 		super();
 		this.nume = nume;
@@ -61,14 +68,15 @@ public abstract class Aplicant{
 		this.nr_proiecte = nr_proiecte;
 		this.denumireProiect = denumireProiect;
 	}
+	
 	public int getNr_proiecte() {
 		return nr_proiecte;
 	}
 	
-	
 	public String[] getDenumireProiect() {
 		return denumireProiect;
 	}
+	
 	public void setDenumiriProiect(String[] denumireProiect, int nr) {
 		this.nr_proiecte = nr;
 		this.denumireProiect = denumireProiect;
@@ -88,6 +96,15 @@ public abstract class Aplicant{
 		builder.append(nr_proiecte);
 		builder.append(", denumireProiect=");
 		builder.append(Arrays.toString(denumireProiect));
+		return builder.toString();
+	}
+	
+	public String finantare() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Aplicant nume=");
+		builder.append(nume);
+		builder.append(", prenume=");
+		builder.append(prenume);
 		return builder.toString();
 	}
 

@@ -6,10 +6,10 @@ import java.util.Scanner;
 
 import ro.ase.cts.clase.Aplicant;
 
-public abstract class AplicantReader {
+public abstract class AplicantiReader {
 	protected String numeFisier;
 	
-	public AplicantReader(String numeFisier) {
+	public AplicantiReader(String numeFisier) {
 		super();
 		this.numeFisier = numeFisier;
 	}
@@ -21,15 +21,16 @@ public abstract class AplicantReader {
 		String prenume = scanner.next();
 		int varsta = scanner.nextInt();
 		int punctaj = scanner.nextInt();
-		int nr = scanner.nextInt();
-		String[] vect = new String[5];
-		for (int i = 0; i < nr; i++)
-			vect[i] = scanner.next();
+		int nrProiecte = scanner.nextInt();
+		String[] vectProiecte = new String[5];
+		for (int i = 0; i < nrProiecte; i++) {
+			vectProiecte[i] = scanner.next();
+		}
 		aplicant.setNume(nume);
 		aplicant.setPrenume(prenume);
 		aplicant.setVarsta(varsta);
 		aplicant.setPunctaj(punctaj);
-		aplicant.setDenumiriProiect(vect,nr);
+		aplicant.setDenumiriProiect(vectProiecte,nrProiecte);
 		
 	}
 }
