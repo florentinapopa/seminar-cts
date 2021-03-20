@@ -1,5 +1,6 @@
 package ro.ase.cts.program;
 
+import ro.ase.cts.ingrijire.Parfum;
 import ro.ase.cts.singleton.AsigurareMedicala;
 
 public class Program {
@@ -18,6 +19,11 @@ public class Program {
 		System.out.println(asigurareLazy.toString());
 		System.out.println(asigurareLazy2.toString());
 		
+		Parfum parfum1=Parfum.getInstance("Chanel", 100.0, 1234);
+		Parfum parfum2=Parfum.getInstance("Avon", 70.0, 5678);
+		parfum2.setCodBare(7393);
+		System.out.println(parfum1.toString());
+		System.out.println(parfum2.toString());
 	}
 
 }
