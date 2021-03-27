@@ -15,7 +15,6 @@ public class Program {
 		System.out.println(abstractPrototype.toString());
 		System.out.println(abstractPrototype2.toString());
 		System.out.println(clientStadion.toString());
-		System.out.println(clientStadion.toString());
 		
 		Bilet bilet=new Bilet(1,"echipa1","echipa2","27 martie, 10:00");
 		Bilet bilet2=(Bilet)bilet.copy();
