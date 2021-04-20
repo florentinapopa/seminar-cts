@@ -12,7 +12,6 @@ public class Program {
 		client.platesteNota(20);
 		client.setModPlata(new PlataCash());
 		client.platesteNota(5);
-
 	}
 
 }
