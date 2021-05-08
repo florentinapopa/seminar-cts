@@ -1,4 +1,4 @@
-package ro.ase.cts.chain.clase;
+package ro.ase.cts.command.clase;
 
 import java.util.ArrayList;
 import java.util.List;
