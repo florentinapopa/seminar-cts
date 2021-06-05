@@ -3,13 +3,16 @@ package ro.ase.cts.teste;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import ro.ase.cts.clase.Grupa;
+import ro.ase.cts.teste.categorii.UrgentTestCategory;
 
 public class TesteConstructorGrupa {
 
 	
 	@Test
+	@Category(UrgentTestCategory.class)
 	public void testRight() {
 		Grupa grupa=new Grupa(1085);
 		
@@ -23,6 +26,7 @@ public class TesteConstructorGrupa {
 	}
 	
 	@Test 
+	@Category(UrgentTestCategory.class)
 	public void testBoundaryLimitaSuperioara() {
 		Grupa grupa=new Grupa(1100);
 		assertEquals(1100, grupa.getNrGrupa());

@@ -3,11 +3,14 @@ package ro.ase.cts.teste;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import ro.ase.cts.clase.Grupa;
 import ro.ase.cts.dubluri.StudentDummy;
 import ro.ase.cts.dubluri.StudentFake;
 import ro.ase.cts.dubluri.StudentStub;
+import ro.ase.cts.teste.categorii.PromovabilitateCategory;
+import ro.ase.cts.teste.categorii.UrgentTestCategory;
 
 public class TestePromovabilitateGrupaCuDubluri {
 
@@ -21,6 +24,7 @@ public class TestePromovabilitateGrupaCuDubluri {
 	}
 	
 	@Test
+	@Category(PromovabilitateCategory.class)
 	public void testReferenceCuStub() {
 		Grupa grupa=new Grupa(1063);
 		grupa.adaugaStudent(new StudentStub());
@@ -29,6 +33,7 @@ public class TestePromovabilitateGrupaCuDubluri {
 	}
 	
 	@Test
+	@Category({PromovabilitateCategory.class,UrgentTestCategory.class})
 	public void testReferenceCuFake() {
 		Grupa grupa=new Grupa(1063);
 		for(int i=0;i<7;i++) {
